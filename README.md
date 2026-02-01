@@ -1,3 +1,30 @@
+## Fork Information
+
+This is a fork of the original [eDEX-UI project by GitSquared](https://github.com/GitSquared/edex-ui), created to address a security vulnerability.
+
+### Security Patch
+
+This version includes a patch to address the **Cross-site WebSocket Hijacking (CSWH) vulnerability (CVE-2021-23425)**. The original project was archived before this vulnerability was publicly disclosed, and this fork aims to provide a patched version for users.
+
+### Acknowledgements
+
+All credit for this incredible project goes to the original author, **[Squared](https://github.com/GitSquared)**, and the many contributors who made eDEX-UI possible.
+
+Special thanks, as mentioned in the original `README`, go to:
+- **[PixelyIon](https://github.com/PixelyIon)** for help with Windows compatibility.
+- **[IceWolf](https://soundcloud.com/iamicewolf)** for the sound effects.
+- **[Seena](https://github.com/seenaburns)** for the inspiration from `DEX-UI`.
+- **[Rob "Arscan" Scanlon](https://github.com/arscan)** for the `ENCOM Globe`.
+- The developers of `xterm.js`, `systeminformation`, and `SmoothieCharts`.
+
+Please consider supporting these original creators.
+
+## Fork Information
+
+This is a fork of the original [eDEX-UI project by GitSquared](https://github.com/GitSquared/edex-ui).
+
+This version includes a patch to address the Cross-site WebSocket Hijacking (CSWH) vulnerability (CVE-2021-23425).
+
 <p align="center">
   <br>
   <img alt="Logo" src="media/logo.png">
