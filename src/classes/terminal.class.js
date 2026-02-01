@@ -425,9 +425,18 @@ class Terminal {
                 verifyClient: info => {
                     if (this.wss.clients.length >= 1) {
                         return false;
-                    } else {
-                        return true;
                     }
+
+                    // Validate the origin to prevent Cross-site WebSocket Hijacking.
+                    // For Electron apps, the origin is typically 'file://' or 'null'.
+                    // For web deployments, this should be the actual web origin.
+                    // Since eDEX-UI is an Electron app, we check for 'file://' or 'null'.
+                    if (info.origin !== 'file://' && info.origin !== 'null') {
+                        console.warn(`WebSocket connection rejected due to untrusted origin: ${info.origin}`);
+                        return false;
+                    }
+
+                    return true;
                 }
             });
             this.Ipc.on("terminal_channel-"+this.port, (e, ...args) => {
