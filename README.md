@@ -19,11 +19,43 @@ Special thanks, as mentioned in the original `README`, go to:
 
 Please consider supporting these original creators.
 
-## Fork Information
+### Verifying the Security Patch
 
-This is a fork of the original [eDEX-UI project by GitSquared](https://github.com/GitSquared/edex-ui).
+A test script, `vulnerability-test.js`, is included in the `src` directory to allow anyone to verify that the security patch is working correctly.
 
-This version includes a patch to address the Cross-site WebSocket Hijacking (CSWH) vulnerability (CVE-2021-23425).
+**1. How to Run the Test**
+
+1.  Make sure all dependencies are installed by running `npm install` in both the project's root directory and the `src` directory.
+2.  Start the eDEX-UI application by running `npm run start` from the root directory.
+3.  While the application is running, open a new terminal, navigate to the `src` directory, and run the test script:
+    ```bash
+    cd src
+    node vulnerability-test.js
+    ```
+
+**2. Expected Result (Patched Version)**
+
+With the security patch in place, the output should be:
+```
+✅ SECURE: Connection with malicious origin was rejected as expected.
+✅ CORRECT: Connection with valid origin was successful.
+```
+
+**3. How to Test the Original Vulnerability**
+
+To see the difference and prove the effectiveness of the patch, you can temporarily disable it:
+1.  Open `src/classes/terminal.class.js`.
+2.  Find the `verifyClient` function (around line 454) and comment out the origin validation block.
+3.  Restart the eDEX-UI application (`npm run start`).
+4.  Run the test script again as described above.
+
+The output will now change to show the vulnerability:
+```
+❌ VULNERABLE: Connection with malicious origin was successful.
+```
+**Remember to undo your changes to `terminal.class.js` to re-enable the security patch.**
+
+---
 
 <p align="center">
   <br>
