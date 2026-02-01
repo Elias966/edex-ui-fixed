@@ -1,6 +1,20 @@
-## Fork Information
+# eDEX-UI v3.0.0
 
-This is a fork of the original [eDEX-UI project by GitSquared](https://github.com/GitSquared/edex-ui), created to address a security vulnerability.
+This is a fork of the original [eDEX-UI project by GitSquared](https://github.com/GitSquared/edex-ui), created to modernize the project and address security vulnerabilities.
+
+### Version 3.0.0 Release
+
+This version brings the project up to date with the latest technologies and patches a critical security vulnerability.
+
+**Key Changes:**
+
+*   **Electron:** Upgraded from v12.1.0 to v37.6.0 (latest stable)
+*   **Node.js:** Now requires v20.x LTS (previously v16)
+*   **Dependencies:** All dependencies updated to latest stable versions
+*   **Security:** All known vulnerabilities patched (0 vulnerabilities)
+*   **xterm:** Migrated to modern `@xterm/xterm` packages (v5.5.0)
+*   **Build system:** Modernized to work with current Node.js and Python versions
+*   **AppImage Permissions:** The AppImage permission issue has been fixed.
 
 ### Security Patch
 
@@ -18,6 +32,7 @@ Special thanks, as mentioned in the original `README`, go to:
 - The developers of `xterm.js`, `systeminformation`, and `SmoothieCharts`.
 
 Please consider supporting these original creators.
+
 
 ### Verifying the Security Patch
 
